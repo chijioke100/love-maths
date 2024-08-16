@@ -42,7 +42,20 @@ function checkAnswer() {
 
 }
 
+/**
+ * Get the operand(the numbers) and the operators(plus, minus etc) directly from the dom and return the correct answer
+ */
 function calculateCorrectAnswer() {
+    let operand1 = parseInt(document.getElementById('operand1').innertext);
+    let operand2 = parseInt(document.getElementById('operand2').innertext);
+    let operator = document.getElementById('operator').innertext;
+
+    if (operator === "+") {
+        return [operand1 + operand2, "addition"];
+    } else {
+        alert (`Unimplemented operator ${operator}`);
+        throw `Unimplemented operator ${operator}. Aborting!`;
+    }
 
 }
 
